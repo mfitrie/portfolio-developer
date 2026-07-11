@@ -1,0 +1,49 @@
+---
+import { Button } from "../components/ui/button";
+import { Separator } from "../components/ui/separator";
+---
+
+<div class="flex flex-col justify-center items-center h-screen">
+    <div class="flex flex-col gap-4">
+        <div>
+            <span class="text-primary text-sm"
+                >AVAILABLE FOR SELECT PROJECTS</span
+            >
+        </div>
+        <div>
+            <span class="text-2xl"
+                >I build a system to solve business problem</span
+            >
+        </div>
+        <div>
+            <span class="text-sm text-muted-foreground">
+                A developer who works across the entire application stack:
+                frontend (UI/UX, what users see and interact with) and backend
+                (server logic, databases, APIs, and infrastructure). I'm not
+                limited to one layer, and I can build a complete product end to
+                end.
+            </span>
+        </div>
+        <div class="flex flex-row gap-2">
+            <Button size={"lg"} set:text={"Resume"} />
+            <Button size={"lg"} variant={"outline"} set:text={"Get in Touch"} />
+        </div>
+
+        <Separator />
+
+        <div class="flex flex-row justify-between">
+            <div class="flex flex-col gap-1">
+                <span class="text-3xl">7+</span>
+                <span class="text-sm text-muted-foreground">Experience</span>
+            </div>
+            <div class="flex flex-col gap-1">
+                <span class="text-3xl">50+</span>
+                <span class="text-sm text-muted-foreground">Project Delivered</span>
+            </div>
+            <div class="flex flex-col gap-1">
+                <span class="text-3xl">30+</span>
+                <span class="text-sm text-muted-foreground">Technologies Mastered</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+---
+import {
+    Card,
+    CardAction,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "./ui/card";
+import { Badge } from "./ui/badge";
+---
+
+<div class="flex flex-col justify-center items-center min-h-screen">
+    <div class="flex flex-col gap-4">
+        <div>
+            <span class="text-primary text-sm">SELECTED WORK</span>
+        </div>
+        <div>
+            <span class="text-2xl">Projects</span>
+        </div>
+        <div>
+            <span class="text-muted-foreground"
+                >High-impact applications built with precision and care</span
+            >
+        </div>
+        <div class="flex flex-col gap-4">
+            {
+                Array.from({ length: 5 }).map((item) => {
+                    return (
+                        <Card>
+                            <CardHeader>
+                                <CardTitle>Snapdebt Recovery</CardTitle>
+                                <CardDescription>
+                                    Debt recovery and management
+                                </CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <div class="flex flex-col gap-2">
+                                    <p>
+                                        USA-based debt recovery and management
+                                        web application serving 10k+ businesses
+                                        managing accounts all over Florida and
+                                        Orlando.
+                                    </p>
+                                    <div class="flex flex-row items-center gap-2">
+                                        <Badge variant={"outline"}>AWS</Badge>
+                                        <Badge variant={"outline"}>
+                                            Jenkins
+                                        </Badge>
+                                        <Badge variant={"outline"}>Go</Badge>
+                                        <Badge variant={"outline"}>React</Badge>
+                                    </div>
+                                </div>
+                            </CardContent>
+                            <CardFooter>
+                                <a href="#">Visit Website</a>
+                            </CardFooter>
+                        </Card>
+                    );
+                })
+            }
+        </div>
+    </div>
+</div>
