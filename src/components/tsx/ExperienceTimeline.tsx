@@ -12,24 +12,28 @@ import {
 
 export default function ExperienceTimeline() {
     const listExperience: {
+        id: number,
         date: string,
         companyName: string,
         position: string,
         details: string,
     }[] = [
             {
+                id: 1,
                 companyName: "Siaga Labs Sdn Bhd",
                 date: "May 2024 - Present",
                 position: "Full Stack Developer",
                 details: "test"
             },
             {
+                id: 2,
                 companyName: "Siaga Labs Sdn Bhd",
                 date: "May 2024 - Present",
                 position: "Full Stack Developer",
                 details: "test"
             },
             {
+                id: 3,
                 companyName: "Siaga Labs Sdn Bhd",
                 date: "May 2024 - Present",
                 position: "Full Stack Developer",
@@ -41,7 +45,7 @@ export default function ExperienceTimeline() {
         <Timeline defaultValue={1} className="w-full max-w-md">
             {
                 listExperience.map((item, index) => (
-                    <TimelineItem step={index + 1}>
+                    <TimelineItem key={item.id} step={index + 1}>
                         <TimelineHeader>
                             <TimelineDate>{item.date}</TimelineDate>
                             <TimelineTitle>
