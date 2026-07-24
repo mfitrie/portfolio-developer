@@ -11,69 +11,145 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/components/ui/tabs"
+import { Badge } from "../ui/badge"
 
 export function TabSkills() {
+    const listFrontendSkills: string[] = [
+        "React",
+        "Next.js App Router",
+        "TypeScript",
+        "Tanstack Query",
+        "Tailwind CSS",
+        "Astro.js",
+        "Redux",
+        "JavaScript",
+        "shadcn/ui",
+        "React Hook Form"
+    ];
+    const listBackendSkills: string[] = [
+        "Nest.js",
+        "Express.js",
+        "Node.js",
+        "Golang (Go)",
+        "PostgreSQL",
+        "TypeORM",
+        "RabbitMQ",
+        "Redis",
+        "Zod",
+        "Keycloak",
+    ];
+    const listToolDevops: string[] = [
+        "Kubernetes",
+        "Docker",
+        "Jenkins",
+        "GitHub Action",
+        "AWS EC2",
+        "AWS S3",
+        "Cloudflare",
+        "Git",
+        "Nginx",
+        "Ubuntu",
+        "Swagger/OpenAPI",
+        "Postman",
+    ];
+    const listTesting: string[] = [
+        "Jest",
+    ];
+    const allSkills = [
+        ...listFrontendSkills,
+        ...listBackendSkills,
+        ...listToolDevops,
+        ...listTesting,
+    ]
+
+
+
     return (
-        <Tabs defaultValue="overview" className="w-[400px]">
+        <Tabs defaultValue="all" className="w-[400px]">
             <TabsList>
-                <TabsTrigger value="overview">Overview</TabsTrigger>
-                <TabsTrigger value="analytics">Analytics</TabsTrigger>
-                <TabsTrigger value="reports">Reports</TabsTrigger>
-                <TabsTrigger value="settings">Settings</TabsTrigger>
+                <TabsTrigger value="all">All</TabsTrigger>
+                <TabsTrigger value="frontend">Frontend</TabsTrigger>
+                <TabsTrigger value="backend">Backend</TabsTrigger>
+                <TabsTrigger value="toolsdevops">Tools & DevOps</TabsTrigger>
+                <TabsTrigger value="testing">Testing</TabsTrigger>
             </TabsList>
-            <TabsContent value="overview">
+            <TabsContent value="all">
                 <Card>
                     <CardHeader>
-                        <CardTitle>Overview</CardTitle>
-                        <CardDescription>
-                            View your key metrics and recent project activity. Track progress
-                            across all your active projects.
-                        </CardDescription>
+                        <CardTitle>All</CardTitle>
                     </CardHeader>
-                    <CardContent className="text-sm text-muted-foreground">
-                        You have 12 active projects and 3 pending tasks.
+                    <CardContent>
+                        <div className="flex flex-wrap gap-2 max-w-full">
+                            {
+                                allSkills.map(item => (
+                                    <Badge variant="outline">{item}</Badge>
+                                ))
+                            }
+                        </div>
                     </CardContent>
                 </Card>
             </TabsContent>
-            <TabsContent value="analytics">
+            <TabsContent value="frontend">
                 <Card>
                     <CardHeader>
-                        <CardTitle>Analytics</CardTitle>
-                        <CardDescription>
-                            Track performance and user engagement metrics. Monitor trends and
-                            identify growth opportunities.
-                        </CardDescription>
+                        <CardTitle>Frontend</CardTitle>
                     </CardHeader>
-                    <CardContent className="text-sm text-muted-foreground">
-                        Page views are up 25% compared to last month.
+                    <CardContent>
+                        <div className="flex flex-wrap gap-2 max-w-full">
+                            {
+                                listFrontendSkills.map(item => (
+                                    <Badge variant="outline">{item}</Badge>
+                                ))
+                            }
+                        </div>
                     </CardContent>
                 </Card>
             </TabsContent>
-            <TabsContent value="reports">
+            <TabsContent value="backend">
                 <Card>
                     <CardHeader>
-                        <CardTitle>Reports</CardTitle>
-                        <CardDescription>
-                            Generate and download your detailed reports. Export data in
-                            multiple formats for analysis.
-                        </CardDescription>
+                        <CardTitle>Backend</CardTitle>
                     </CardHeader>
-                    <CardContent className="text-sm text-muted-foreground">
-                        You have 5 reports ready and available to export.
+                    <CardContent>
+                        <div className="flex flex-wrap gap-2 max-w-full">
+                            {
+                                listBackendSkills.map(item => (
+                                    <Badge variant="outline">{item}</Badge>
+                                ))
+                            }
+                        </div>
                     </CardContent>
                 </Card>
             </TabsContent>
-            <TabsContent value="settings">
+            <TabsContent value="toolsdevops">
                 <Card>
                     <CardHeader>
-                        <CardTitle>Settings</CardTitle>
-                        <CardDescription>
-                            Manage your account preferences and options. Customize your
-                            experience to fit your needs.
-                        </CardDescription>
+                        <CardTitle>Tools & DevOps</CardTitle>
                     </CardHeader>
-                    <CardContent className="text-sm text-muted-foreground">
-                        Configure notifications, security, and themes.
+                    <CardContent>
+                        <div className="flex flex-wrap gap-2 max-w-full">
+                            {
+                                listToolDevops.map(item => (
+                                    <Badge variant="outline">{item}</Badge>
+                                ))
+                            }
+                        </div>
+                    </CardContent>
+                </Card>
+            </TabsContent>
+            <TabsContent value="testing">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Testing</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <div className="flex flex-wrap gap-2 max-w-full">
+                            {
+                                listTesting.map(item => (
+                                    <Badge variant="outline">{item}</Badge>
+                                ))
+                            }
+                        </div>
                     </CardContent>
                 </Card>
             </TabsContent>
