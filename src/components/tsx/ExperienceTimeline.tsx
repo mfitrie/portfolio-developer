@@ -11,12 +11,6 @@ import {
 } from "@/components/reui/timeline";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
 
-function clipText(text: string, maxLength: number = 100): string {
-    if (text.length <= maxLength) {
-        return text;
-    }
-    return text.slice(0, maxLength).trimEnd() + "...";
-}
 
 export default function ExperienceTimeline() {
     const listExperience: {
@@ -49,34 +43,19 @@ export default function ExperienceTimeline() {
             }
         ];
 
-    // const accordionItems = [
-    //     {
-    //         value: listExperience[0],
-    //         trigger: "How do I reset my password?",
-    //         content:
-    //             "Click on 'Forgot Password' on the login page, enter your email address, and we'll send you a link to reset your password. The link will expire in 24 hours.",
-    //     },
-    //     {
-    //         value: "item-2",
-    //         trigger: "Can I change my subscription plan?",
-    //         content:
-    //             "Yes, you can upgrade or downgrade your plan at any time from your account settings. Changes will be reflected in your next billing cycle.",
-    //     },
-    //     {
-    //         value: "item-3",
-    //         trigger: "What payment methods do you accept?",
-    //         content:
-    //             "We accept all major credit cards, PayPal, and bank transfers. All payments are processed securely through our payment partners.",
-    //     },
-    // ]
 
     const accordionItems: {
         value: string | number,
-        trigger: string,
+        trigger: React.ReactNode,
         content: string,
     }[] = listExperience.map(item => ({
         value: item.id,
-        trigger: clipText(item.details, 40),
+        trigger: (
+            <div className="flex flex-row items-center gap-1">
+                <span className="text-primary">{item.companyName}</span>
+                <span className="text-muted-foreground text-xs">({item.position})</span>
+            </div>
+        ),
         content: item.details
     }));
 
@@ -89,12 +68,6 @@ export default function ExperienceTimeline() {
                     <TimelineItem key={item.id} step={index + 1}>
                         <TimelineHeader>
                             <TimelineDate>{item.date}</TimelineDate>
-                            <TimelineTitle>
-                                <div className="flex flex-row items-center gap-1">
-                                    <span>{item.companyName}</span>
-                                    <span className="text-muted-foreground text-xs">({item.position})</span>
-                                </div>
-                            </TimelineTitle>
                         </TimelineHeader>
                         <TimelineIndicator />
                         <TimelineSeparator />
