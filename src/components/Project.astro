@@ -10,12 +10,10 @@ import {
 } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { listProject } from "@/stores/data";
+import { BadgeCustomColors } from "./ui/custom-badge";
 ---
 
-<div
-    id="project"
-    class="flex flex-col pt-5 min-h-screen"
->
+<div id="project" class="flex flex-col pt-5 min-h-screen">
     <div class="flex flex-col gap-4">
         <div>
             <span class="text-primary text-sm">SELECTED WORK</span>
@@ -35,22 +33,33 @@ import { listProject } from "@/stores/data";
                         <Card>
                             <CardHeader>
                                 <CardTitle>{item.title}</CardTitle>
-                                <CardDescription>{item.title_description}</CardDescription>
+                                <CardDescription>
+                                    {item.title_description}
+                                </CardDescription>
                             </CardHeader>
                             <CardContent>
                                 <div class="flex flex-col gap-2">
                                     <p>{item.description}</p>
                                     <div class="flex flex-row items-center gap-2">
-                                        {
-                                            item.skills.map(itemInside => (
-                                                <Badge variant={"outline"}>{itemInside}</Badge>
-                                            ))
-                                        }
+                                        {item.skills.map(
+                                            (itemInside, indexInside) => (
+                                                <BadgeCustomColors
+                                                    color="indigo"
+                                                    text={itemInside}
+                                                />
+                                            ),
+                                        )}
                                     </div>
                                 </div>
                             </CardContent>
                             <CardFooter>
-                                <a href={item.website_link}>Visit Website</a>
+                                <a
+                                    href={item.website_link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Visit Website
+                                </a>
                             </CardFooter>
                         </Card>
                     );

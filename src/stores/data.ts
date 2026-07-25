@@ -7,14 +7,18 @@ export const listProject: {
     website_link: string,
 }[] = [
         {
-            title: "Snapdebt Recovery",
-            title_description: "Debt recovery and management",
-            description: "USA-based debt recovery and management web application serving 10k+ businesses managing accounts all over Florida and Orlando.",
+            title: "Photographer Portfolio",
+            title_description: "For photography portfolio",
+            description: "To tell the client about packages and contact information",
             skills: [
-                "Jenkins"
+                "Next.js 16",
+                "Cloudflare",
+                "SEO"
             ],
-            website_link: "#"
-        }
+            website_link: "https://capturemoment.fitrie-server.xyz/"
+        },
+        //TODO: homelab kubernetes
+        //TODO: money tracker
     ];
 
 //* Experience

@@ -93,12 +93,18 @@ export default function AccordionBottomNavBar() {
                                 <Button
                                     variant="outline"
                                     size="icon"
+                                    onClick={() => {
+                                        window.open('https://www.linkedin.com/in/muhammad-fitrie-a88472199/', '_blank', 'noopener,noreferrer');
+                                    }}
                                 >
                                     <Icon icon="mdi:linkedin" />
                                 </Button>
                                 <Button
                                     variant="outline"
                                     size="icon"
+                                    onClick={() => {
+                                        window.open('https://github.com/mfitrie', '_blank', 'noopener,noreferrer');
+                                    }}
                                 >
                                     <Icon icon="mdi:github" />
                                 </Button>
