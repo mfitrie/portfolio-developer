@@ -76,6 +76,8 @@ export const listBackendSkills: string[] = [
 ];
 export const listToolDevops: string[] = [
     "Kubernetes",
+    "Helm",
+    "Kustomize",
     "Docker",
     "Jenkins",
     "GitHub Action",

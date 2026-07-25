@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/tabs"
 import { Badge } from "../ui/badge"
 import { allSkills, listBackendSkills, listFrontendSkills, listTesting, listToolDevops } from "@/stores/data"
+import { BadgeCustomColors } from "../ui/custom-badge"
 
 export function TabSkills() {
     return (
@@ -33,7 +34,11 @@ export function TabSkills() {
                         <div className="flex flex-wrap gap-2 max-w-full">
                             {
                                 allSkills.map((item, index) => (
-                                    <Badge variant="outline" key={index}>{item}</Badge>
+                                    <BadgeCustomColors
+                                        key={index}
+                                        color="sky"
+                                        text={item}
+                                    />
                                 ))
                             }
                         </div>
@@ -49,7 +54,11 @@ export function TabSkills() {
                         <div className="flex flex-wrap gap-2 max-w-full">
                             {
                                 listFrontendSkills.map((item, index) => (
-                                    <Badge variant="outline" key={index}>{item}</Badge>
+                                    <BadgeCustomColors
+                                        key={index}
+                                        color="purple"
+                                        text={item}
+                                    />
                                 ))
                             }
                         </div>
@@ -65,7 +74,11 @@ export function TabSkills() {
                         <div className="flex flex-wrap gap-2 max-w-full">
                             {
                                 listBackendSkills.map((item, index) => (
-                                    <Badge variant="outline" key={index}>{item}</Badge>
+                                    <BadgeCustomColors
+                                        key={index}
+                                        color="green"
+                                        text={item}
+                                    />
                                 ))
                             }
                         </div>
@@ -81,7 +94,11 @@ export function TabSkills() {
                         <div className="flex flex-wrap gap-2 max-w-full">
                             {
                                 listToolDevops.map((item, index) => (
-                                    <Badge variant="outline" key={index}>{item}</Badge>
+                                    <BadgeCustomColors
+                                        key={index}
+                                        color="fuchsia"
+                                        text={item}
+                                    />
                                 ))
                             }
                         </div>
@@ -97,7 +114,11 @@ export function TabSkills() {
                         <div className="flex flex-wrap gap-2 max-w-full">
                             {
                                 listTesting.map((item, index) => (
-                                    <Badge variant="outline" key={index}>{item}</Badge>
+                                    <BadgeCustomColors
+                                        key={index}
+                                        color="purple"
+                                        text={item}
+                                    />
                                 ))
                             }
                         </div>
