@@ -11,5 +11,5 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  site: "https://fitriedev.fitrie-server.xyz"
+  site: "https://fitriedev.fitrie-server.xyz",
 });
