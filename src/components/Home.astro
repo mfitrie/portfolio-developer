@@ -1,7 +1,8 @@
 ---
-import { allSkills, listExperience, listProject } from "@/stores/data";
+import { listExternalLinks, allSkills, listExperience, listProject } from "@/stores/data";
 import { Button } from "../components/ui/button";
 import { Separator } from "../components/ui/separator";
+import { Icon } from "@iconify/react";
 ---
 
 <div id="home" class="flex flex-col items-center h-screen pt-32">
@@ -28,12 +29,30 @@ import { Separator } from "../components/ui/separator";
                 </span>
             </div>
             <div class="flex flex-row gap-2">
-                <Button size={"lg"} set:text={"Resume"} />
-                <Button
-                    size={"lg"}
-                    variant={"outline"}
-                    set:text={"Get in Touch"}
-                />
+                <a
+                    href={listExternalLinks[1].link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <Button variant="outline">
+                        <div class="flex flex-row items-center gap-1">
+                            <Icon client:visible icon="mdi:github" />
+                            <span>GitHub</span>
+                        </div>
+                    </Button>
+                </a>
+                <a
+                    href={listExternalLinks[0].link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <Button>
+                        <div class="flex flex-row items-center gap-1">
+                            <Icon client:visible icon="mdi:linkedin" />
+                            <span>Linkedin</span>
+                        </div>
+                    </Button>
+                </a>
             </div>
         </div>
 

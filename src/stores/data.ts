@@ -1,3 +1,18 @@
+//* Link btn
+export const listExternalLinks: {
+    title: string,
+    link: string
+}[] = [
+    {
+        title: "Linkedin",
+        link: "https://www.linkedin.com/in/muhammad-fitrie-a88472199/",
+    },
+    {
+        title: "GitHub",
+        link: "https://github.com/mfitrie",
+    },
+]
+
 //* Projects
 export const listProject: {
     title: string,

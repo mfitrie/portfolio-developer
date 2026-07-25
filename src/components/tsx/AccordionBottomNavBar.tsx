@@ -4,6 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "..
 import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import { TerminalIcon } from "../icons/TerminalIcon";
+import { listExternalLinks } from "@/stores/data";
 
 export default function AccordionBottomNavBar() {
     const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -94,7 +95,7 @@ export default function AccordionBottomNavBar() {
                                     variant="outline"
                                     size="icon"
                                     onClick={() => {
-                                        window.open('https://www.linkedin.com/in/muhammad-fitrie-a88472199/', '_blank', 'noopener,noreferrer');
+                                        window.open(listExternalLinks[0].link, '_blank', 'noopener,noreferrer');
                                     }}
                                 >
                                     <Icon icon="mdi:linkedin" />
@@ -103,7 +104,7 @@ export default function AccordionBottomNavBar() {
                                     variant="outline"
                                     size="icon"
                                     onClick={() => {
-                                        window.open('https://github.com/mfitrie', '_blank', 'noopener,noreferrer');
+                                        window.open(listExternalLinks[1].link, '_blank', 'noopener,noreferrer');
                                     }}
                                 >
                                     <Icon icon="mdi:github" />
