@@ -9,6 +9,7 @@ import {
     CardTitle,
 } from "./ui/card";
 import { Badge } from "./ui/badge";
+import { listProject } from "@/stores/data";
 ---
 
 <div
@@ -29,35 +30,27 @@ import { Badge } from "./ui/badge";
         </div>
         <div class="flex flex-col gap-4">
             {
-                Array.from({ length: 1 }).map((item) => {
+                listProject.map((item) => {
                     return (
                         <Card>
                             <CardHeader>
-                                <CardTitle>Snapdebt Recovery</CardTitle>
-                                <CardDescription>
-                                    Debt recovery and management
-                                </CardDescription>
+                                <CardTitle>{item.title}</CardTitle>
+                                <CardDescription>{item.title_description}</CardDescription>
                             </CardHeader>
                             <CardContent>
                                 <div class="flex flex-col gap-2">
-                                    <p>
-                                        USA-based debt recovery and management
-                                        web application serving 10k+ businesses
-                                        managing accounts all over Florida and
-                                        Orlando.
-                                    </p>
+                                    <p>{item.description}</p>
                                     <div class="flex flex-row items-center gap-2">
-                                        <Badge variant={"outline"}>AWS</Badge>
-                                        <Badge variant={"outline"}>
-                                            Jenkins
-                                        </Badge>
-                                        <Badge variant={"outline"}>Go</Badge>
-                                        <Badge variant={"outline"}>React</Badge>
+                                        {
+                                            item.skills.map(itemInside => (
+                                                <Badge variant={"outline"}>{itemInside}</Badge>
+                                            ))
+                                        }
                                     </div>
                                 </div>
                             </CardContent>
                             <CardFooter>
-                                <a href="#">Visit Website</a>
+                                <a href={item.website_link}>Visit Website</a>
                             </CardFooter>
                         </Card>
                     );

@@ -1,12 +1,10 @@
 ---
+import { allSkills, listExperience, listProject } from "@/stores/data";
 import { Button } from "../components/ui/button";
 import { Separator } from "../components/ui/separator";
 ---
 
-<div
-    id="home"
-    class="flex flex-col justify-center items-center h-screen"
->
+<div id="home" class="flex flex-col justify-center items-center h-screen">
     <div class="flex flex-col gap-4">
         <div>
             <span class="text-primary text-sm"
@@ -36,16 +34,20 @@ import { Separator } from "../components/ui/separator";
 
         <div class="flex flex-row justify-between">
             <div class="flex flex-col gap-1">
-                <span class="text-3xl">7+</span>
+                <span class="text-3xl">{listExperience.length}+</span>
                 <span class="text-sm text-muted-foreground">Experience</span>
             </div>
             <div class="flex flex-col gap-1">
-                <span class="text-3xl">50+</span>
-                <span class="text-sm text-muted-foreground">Project Delivered</span>
+                <span class="text-3xl">{listProject.length}+</span>
+                <span class="text-sm text-muted-foreground"
+                    >Project Delivered</span
+                >
             </div>
             <div class="flex flex-col gap-1">
-                <span class="text-3xl">30+</span>
-                <span class="text-sm text-muted-foreground">Technologies Mastered</span>
+                <span class="text-3xl">{allSkills.length}+</span>
+                <span class="text-sm text-muted-foreground"
+                    >Technologies Mastered</span
+                >
             </div>
         </div>
     </div>
