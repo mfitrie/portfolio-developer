@@ -32,8 +32,8 @@ export function TabSkills() {
                     <CardContent>
                         <div className="flex flex-wrap gap-2 max-w-full">
                             {
-                                allSkills.map(item => (
-                                    <Badge variant="outline">{item}</Badge>
+                                allSkills.map((item, index) => (
+                                    <Badge variant="outline" key={index}>{item}</Badge>
                                 ))
                             }
                         </div>
@@ -48,8 +48,8 @@ export function TabSkills() {
                     <CardContent>
                         <div className="flex flex-wrap gap-2 max-w-full">
                             {
-                                listFrontendSkills.map(item => (
-                                    <Badge variant="outline">{item}</Badge>
+                                listFrontendSkills.map((item, index) => (
+                                    <Badge variant="outline" key={index}>{item}</Badge>
                                 ))
                             }
                         </div>
@@ -64,8 +64,8 @@ export function TabSkills() {
                     <CardContent>
                         <div className="flex flex-wrap gap-2 max-w-full">
                             {
-                                listBackendSkills.map(item => (
-                                    <Badge variant="outline">{item}</Badge>
+                                listBackendSkills.map((item, index) => (
+                                    <Badge variant="outline" key={index}>{item}</Badge>
                                 ))
                             }
                         </div>
@@ -80,8 +80,8 @@ export function TabSkills() {
                     <CardContent>
                         <div className="flex flex-wrap gap-2 max-w-full">
                             {
-                                listToolDevops.map(item => (
-                                    <Badge variant="outline">{item}</Badge>
+                                listToolDevops.map((item, index) => (
+                                    <Badge variant="outline" key={index}>{item}</Badge>
                                 ))
                             }
                         </div>
@@ -96,8 +96,8 @@ export function TabSkills() {
                     <CardContent>
                         <div className="flex flex-wrap gap-2 max-w-full">
                             {
-                                listTesting.map(item => (
-                                    <Badge variant="outline">{item}</Badge>
+                                listTesting.map((item, index) => (
+                                    <Badge variant="outline" key={index}>{item}</Badge>
                                 ))
                             }
                         </div>

@@ -2,6 +2,7 @@ import { ChevronDown, Moon, Sun } from "lucide-react";
 import { Button } from "../ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/custom-accordion";
 import { useEffect, useState } from "react";
+import { Icon } from "@iconify/react";
 
 export default function AccordionBottomNavBar() {
     const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -58,7 +59,7 @@ export default function AccordionBottomNavBar() {
                     </div>
                 </AccordionTrigger>
                 <AccordionContent>
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-4">
                         <div className="grid grid-cols-2 gap-1">
                             {
                                 listMenu.map(item => (
@@ -73,28 +74,43 @@ export default function AccordionBottomNavBar() {
                                 ))
                             }
                         </div>
-                        <div className="">
-                            {/* //TODO: add btn linkedin, github */}
-                            <Button
-                                variant="outline"
-                                size="icon"
-                                onClick={() => {
-                                    const isDark = document.documentElement.classList.toggle("dark");
-                                    localStorage.setItem("theme", isDark ? "dark" : "light");
-                                    setIsDarkMode(!isDarkMode);
-                                }}
-                            >
-                                {
-                                    isDarkMode && (
-                                        <Sun />
-                                    )
-                                }
-                                {
-                                    !isDarkMode && (
-                                        <Moon />
-                                    )
-                                }
-                            </Button>
+                        <div className="flex flex-row justify-between items-center">
+                            <div className="flex flex-row items-center gap-2">
+                                <Button
+                                    variant="outline"
+                                    size="icon"
+                                >
+                                    <Icon icon="mdi:linkedin" />
+                                </Button>
+                                <Button
+                                    variant="outline"
+                                    size="icon"
+                                >
+                                    <Icon icon="mdi:github" />
+                                </Button>
+                            </div>
+                            <div className="flex flex-row items-center ">
+                                <Button
+                                    variant="outline"
+                                    size="icon"
+                                    onClick={() => {
+                                        const isDark = document.documentElement.classList.toggle("dark");
+                                        localStorage.setItem("theme", isDark ? "dark" : "light");
+                                        setIsDarkMode(!isDarkMode);
+                                    }}
+                                >
+                                    {
+                                        isDarkMode && (
+                                            <Sun />
+                                        )
+                                    }
+                                    {
+                                        !isDarkMode && (
+                                            <Moon />
+                                        )
+                                    }
+                                </Button>
+                            </div>
                         </div>
                     </div>
                 </AccordionContent>
