@@ -1,6 +1,7 @@
 ---
 import BottomNavBar from "@/components/BottomNavBar.astro";
 import "../styles/global.css";
+import ProgressScroll from "@/components/tsx/ProgressScroll";
 ---
 
 <!doctype html>
@@ -16,9 +17,12 @@ import "../styles/global.css";
 		<meta name="generator" content={Astro.generator} />
 		<title>Porfolio Web</title>
 	</head>
-	<body class="px-4">
-		<slot />
-		<BottomNavBar/>
+	<body>
+		<ProgressScroll client:load />
+		<div class="px-4">
+			<slot />
+			<BottomNavBar/>
+		</div>
 	</body>
 </html>
 
