@@ -58,9 +58,7 @@ export default function AccordionBottomNavBar() {
                                 </span>
                             </div>
                         </div>
-                        <Button variant="ghost" size="icon">
-                            Menu
-                        </Button>
+                        <Button variant="outline">Menu</Button>
                     </div>
                 </AccordionTrigger>
                 <AccordionContent>
