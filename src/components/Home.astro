@@ -3,6 +3,7 @@ import { listExternalLinks, allSkills, listExperience, listProject } from "@/sto
 import { Button } from "../components/ui/button";
 import { Separator } from "../components/ui/separator";
 import { Icon } from "@iconify/react";
+import TitleHomepage from "./tsx/TitleHomepage"
 ---
 
 <div id="home" class="flex flex-col items-center h-screen pt-32">
@@ -10,14 +11,10 @@ import { Icon } from "@iconify/react";
         <div class="flex flex-col gap-5">
             <!-- //TODO: add animation icon or blender -->
             <div>
-                <span class="text-primary text-sm"
-                    >AVAILABLE FOR SELECT PROJECTS</span
-                >
+                <span class="text-primary text-sm">AVAILABLE FOR SELECT PROJECTS</span>
             </div>
             <div>
-                <span class="text-2xl"
-                    >I build a system to solve business problem</span
-                >
+                <TitleHomepage client:load />
             </div>
             <div>
                 <span class="text-sm text-muted-foreground">

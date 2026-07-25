@@ -35,7 +35,7 @@ export const listProject: {
         {
             title: "Homelab Kubernetes",
             title_description: "For self-hosted home services",
-            description: "A Kubernetes server bootstrapped from Kubeadm to host and manage multiple services in my home, such as Immich, Vaultwarden, Nextcloud, etc.",
+            description: "A Kubernetes server bootstrapped from Kubeadm to host and manage multiple services in my home, such as Immich, Vaultwarden, Nextcloud, etc. The system architecture overview is coming soon...",
             skills: [
                 "Kubernetes",
                 "Helm",
