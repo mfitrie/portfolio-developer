@@ -66,14 +66,25 @@ export default function AccordionBottomNavBar() {
                         <div className="grid grid-cols-2 gap-1">
                             {
                                 listMenu.map(item => (
-                                    <div className="border flex flex-row items-center justify-center">
+                                    <Button
+                                        variant="outline"
+                                        key={item.link}
+                                    >
                                         <a
                                             href={item.link}
-                                            className="px-3 py-2 rounded-full text-sm transition-colors no-underline! hover:bg-muted"
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                const targetId = item.link.replace("#", "");
+                                                const el = document.getElementById(targetId);
+                                                if (el) {
+                                                    el.scrollIntoView({ behavior: "smooth" });
+                                                }
+                                            }}
+                                            className="no-underline!"
                                         >
                                             {item.title}
                                         </a>
-                                    </div>
+                                    </Button>
                                 ))
                             }
                         </div>

@@ -4,9 +4,10 @@ import { Button } from "../components/ui/button";
 import { Separator } from "../components/ui/separator";
 ---
 
-<div id="home" class="flex flex-col items-center h-screen pt-5">
+<div id="home" class="flex flex-col items-center h-screen pt-32">
     <div class="flex flex-col gap-10">
         <div class="flex flex-col gap-5">
+            <!-- //TODO: add animation icon or blender -->
             <div>
                 <span class="text-primary text-sm"
                     >AVAILABLE FOR SELECT PROJECTS</span
@@ -20,15 +21,19 @@ import { Separator } from "../components/ui/separator";
             <div>
                 <span class="text-sm text-muted-foreground">
                     A developer who works across the entire application stack:
-                    frontend (UI/UX, what users see and interact with) and backend
-                    (server logic, databases, APIs, and infrastructure). I'm not
-                    limited to one layer, and I can build a complete product end to
-                    end.
+                    frontend (UI/UX, what users see and interact with) and
+                    backend (server logic, databases, APIs, and infrastructure).
+                    I'm not limited to one layer, and I can build a complete
+                    product end to end.
                 </span>
             </div>
             <div class="flex flex-row gap-2">
                 <Button size={"lg"} set:text={"Resume"} />
-                <Button size={"lg"} variant={"outline"} set:text={"Get in Touch"} />
+                <Button
+                    size={"lg"}
+                    variant={"outline"}
+                    set:text={"Get in Touch"}
+                />
             </div>
         </div>
 
