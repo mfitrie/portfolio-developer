@@ -3,6 +3,7 @@ import { Button } from "../ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/custom-accordion";
 import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
+import { TerminalIcon } from "../icons/TerminalIcon";
 
 export default function AccordionBottomNavBar() {
     const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -46,12 +47,16 @@ export default function AccordionBottomNavBar() {
             <AccordionItem value="shipping">
                 <AccordionTrigger className="group hover:no-underline [&>svg]:hidden">
                     <div className="flex flex-1 items-center justify-between">
-                        <div className="flex flex-col text-left">
-                            {/* //TODO: add lottiefiles terminal */}
-                            <span>Muhammad Fitrie</span>
-                            <span className="text-sm text-muted-foreground">
-                                Full-Stack Developer
-                            </span>
+                        <div className="flex flex-row gap-4 items-center">
+                            <div>
+                                <TerminalIcon className="w-8 h-8 text-foreground" />
+                            </div>
+                            <div className="flex flex-col text-left">
+                                <span>Muhammad Fitrie</span>
+                                <span className="text-sm text-muted-foreground">
+                                    Full-Stack Developer
+                                </span>
+                            </div>
                         </div>
                         <Button variant="ghost" size="icon">
                             Menu
