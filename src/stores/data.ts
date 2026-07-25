@@ -4,7 +4,7 @@ export const listProject: {
     title_description: string | null,
     description: string,
     skills: string[]
-    website_link: string,
+    website_link: string | null,
 }[] = [
         {
             title: "Photographer Portfolio",
@@ -17,8 +17,30 @@ export const listProject: {
             ],
             website_link: "https://capturemoment.fitrie-server.xyz/"
         },
-        //TODO: homelab kubernetes
-        //TODO: money tracker
+        {
+            title: "Homelab Kubernetes",
+            title_description: "For self-hosted home services",
+            description: "A Kubernetes server bootstrapped from Kubeadm to host and manage multiple services in my home, such as Immich, Vaultwarden, Nextcloud, etc.",
+            skills: [
+                "Kubernetes",
+                "Helm",
+                "Kustomize",
+                "Kubeadm",
+            ],
+            website_link: null
+        },
+        {
+            title: "Money Tracker",
+            title_description: "For expense tracking and budgeting",
+            description: "To track my expenditure and provide a dashboard for decision-making. It also has multiple categories for expenditure.",
+            skills: [
+                "Next.js 16",
+                "Tanstack Query",
+                "Golang (Go)",
+                "PostgreSQL",
+            ],
+            website_link: null
+        },
     ];
 
 //* Experience

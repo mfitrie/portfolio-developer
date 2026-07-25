@@ -11,6 +11,8 @@ import {
 import { Badge } from "./ui/badge";
 import { listProject } from "@/stores/data";
 import { BadgeCustomColors } from "./ui/custom-badge";
+import { Button } from "./ui/button";
+import { ExternalLink } from "lucide-react";
 ---
 
 <div id="project" class="flex flex-col pt-5 min-h-screen">
@@ -52,15 +54,22 @@ import { BadgeCustomColors } from "./ui/custom-badge";
                                     </div>
                                 </div>
                             </CardContent>
-                            <CardFooter>
-                                <a
-                                    href={item.website_link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Visit Website
-                                </a>
-                            </CardFooter>
+                            {item.website_link && (
+                                <CardFooter>
+                                    <a
+                                        href={item.website_link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <Button variant="outline">
+                                            <div class="flex flex-row items-center gap-2">
+                                                <span>Visit Website</span>
+                                                <ExternalLink />
+                                            </div>
+                                        </Button>
+                                    </a>
+                                </CardFooter>
+                            )}
                         </Card>
                     );
                 })
