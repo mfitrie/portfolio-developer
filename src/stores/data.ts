@@ -42,7 +42,8 @@ export const listProject: {
                 "Kustomize",
                 "Kubeadm",
             ],
-            website_link: null
+            //FIX:
+            website_link: "http://localhost:4321/blog/kubernetes-homelab/"
         },
         {
             title: "Money Tracker",

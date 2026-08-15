@@ -1,0 +1,51 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog"))
+    .filter((post) => !post.data.draft)
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout title="Blog">
+    <div class="mx-auto max-w-2xl px-6 py-16">
+        <p class="mb-6 font-mono text-sm text-muted-foreground">
+            <span class="text-primary">~/blog $</span> ls -la posts/
+        </p>
+        <h1 class="mb-8 font-mono text-2xl font-semibold tracking-tight">
+            Posts
+        </h1>
+
+        <div class="border-t border-border">
+            {
+                posts.map((post) => (
+                    <a
+                        href={`/blog/${post.id}/`}
+                        class="grid grid-cols-[auto_1fr_auto_auto] items-baseline gap-4 border-b border-border px-1 py-4 font-mono text-sm transition-colors hover:bg-accent"
+                    >
+                        <span
+                            class="h-2 w-2 rounded-full bg-emerald-500"
+                            title="published"
+                        />
+                        <span class="font-medium text-foreground">
+                            {post.data.title}
+                        </span>
+                        <span class="text-xs text-muted-foreground">
+                            {post.data.tags?.map((t) => `#${t}`).join(" ")}
+                        </span>
+                        <span class="text-xs text-muted-foreground">
+                            {post.data.pubDate.toISOString().slice(0, 10)}
+                        </span>
+                    </a>
+                ))
+            }
+        </div>
+
+        <p class="mt-6 font-mono text-sm text-muted-foreground">
+            <span class="text-primary">~/blog $</span>
+            <span
+                class="ml-1 inline-block h-4 w-2 animate-pulse bg-primary align-text-bottom"
+            ></span>
+        </p>
+    </div>
+</Layout>
