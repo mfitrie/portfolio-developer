@@ -1,6 +1,10 @@
 ---
+import { Button } from "@/components/ui/button";
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import { Icon } from "@iconify/react";
+import { ArrowLeft } from "lucide-react";
+const host = Astro.url.host;
 
 const posts = (await getCollection("blog"))
     .filter((post) => !post.data.draft)
@@ -16,36 +20,38 @@ const posts = (await getCollection("blog"))
             Posts
         </h1>
 
-        <div class="border-t border-border">
-            {
-                posts.map((post) => (
-                    <a
-                        href={`/blog/${post.id}/`}
-                        class="grid grid-cols-[auto_1fr_auto_auto] items-baseline gap-4 border-b border-border px-1 py-4 font-mono text-sm transition-colors hover:bg-accent"
-                    >
-                        <span
-                            class="h-2 w-2 rounded-full bg-emerald-500"
-                            title="published"
-                        />
-                        <span class="font-medium text-foreground">
-                            {post.data.title}
-                        </span>
-                        <span class="text-xs text-muted-foreground">
-                            {post.data.tags?.map((t) => `#${t}`).join(" ")}
-                        </span>
-                        <span class="text-xs text-muted-foreground">
-                            {post.data.pubDate.toISOString().slice(0, 10)}
-                        </span>
-                    </a>
-                ))
-            }
+        <div class="flex flex-col gap-8">
+            <div class="border-t border-border">
+                {
+                    posts.map((post) => (
+                        <a
+                            href={`/blog/${post.id}/`}
+                            class="grid grid-cols-[auto_1fr_auto_auto] items-baseline gap-4 border-b border-border px-1 py-4 font-mono text-sm transition-colors hover:bg-accent"
+                        >
+                            <span
+                                class="h-2 w-2 rounded-full bg-emerald-500"
+                                title="published"
+                            />
+                            <span class="font-medium text-foreground">
+                                {post.data.title}
+                            </span>
+                            <span class="text-xs text-muted-foreground">
+                                {post.data.tags?.map((t) => `#${t}`).join(" ")}
+                            </span>
+                            <span class="text-xs text-muted-foreground">
+                                {post.data.pubDate.toISOString().slice(0, 10)}
+                            </span>
+                        </a>
+                    ))
+                }
+            </div>
+    
+            <div>
+                <Button className="cursor-pointer">
+                    <ArrowLeft />
+                    <a href="/">Back to Home</a>
+                </Button>
+            </div>
         </div>
-
-        <p class="mt-6 font-mono text-sm text-muted-foreground">
-            <span class="text-primary">~/blog $</span>
-            <span
-                class="ml-1 inline-block h-4 w-2 animate-pulse bg-primary align-text-bottom"
-            ></span>
-        </p>
     </div>
 </Layout>

@@ -1,13 +1,15 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { getCollection, render } from 'astro:content';
+import { Button } from "@/components/ui/button";
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
+import { ArrowLeft } from "lucide-react";
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
-  return posts.map(post => ({
-    params: { id: post.id },
-    props: { post },
-  }));
+    const posts = await getCollection("blog");
+    return posts.map((post) => ({
+        params: { id: post.id },
+        props: { post },
+    }));
 }
 
 const { post } = Astro.props;
@@ -15,28 +17,33 @@ const { Content } = await render(post);
 ---
 
 <Layout title={post.data.title}>
-  <div class="mx-auto max-w-2xl px-6 py-16">
-    <p class="mb-6 font-mono text-sm text-muted-foreground">
-      <span class="text-primary">~/blog $</span> cat posts/{post.id}.md
-    </p>
-    <h1 class="mb-4 font-mono text-2xl font-semibold tracking-tight">
-      {post.data.title}
-    </h1>
+    <div class="mx-auto max-w-2xl px-6 py-16">
+        <p class="mb-6 font-mono text-sm text-muted-foreground">
+            <span class="text-primary">~/blog $</span> cat posts/{post.id}.md
+        </p>
+        <h1 class="mb-4 font-mono text-2xl font-semibold tracking-tight">
+            {post.data.title}
+        </h1>
 
-    <div class="mb-10 flex gap-4 border-b border-border pb-6 font-mono text-xs text-muted-foreground">
-      <span>{post.data.pubDate.toISOString().slice(0, 10)}</span>
-      {post.data.tags?.map(t => <span>#{t}</span>)}
+        <div
+            class="mb-10 flex gap-4 border-b border-border pb-6 font-mono text-xs text-muted-foreground"
+        >
+            <span>{post.data.pubDate.toISOString().slice(0, 10)}</span>
+            {post.data.tags?.map((t) => <span>#{t}</span>)}
+        </div>
+
+        <div class="flex flex-col gap-8">
+            <article class="prose-post">
+                <Content />
+            </article>
+
+            <!-- //Footer -->
+            <div>
+                <Button className="cursor-pointer">
+                    <ArrowLeft />
+                    <a href="/blog/"> Back </a>
+                </Button>
+            </div>
+        </div>
     </div>
-
-    <article class="prose-post">
-      <Content />
-    </article>
-
-    <a
-      href="/blog/"
-      class="mt-12 inline-block font-mono text-sm text-muted-foreground transition-colors hover:text-primary"
-    >
-      ← cd ..
-    </a>
-  </div>
 </Layout>

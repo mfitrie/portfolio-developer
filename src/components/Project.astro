@@ -54,6 +54,20 @@ import { ExternalLink } from "lucide-react";
                                     </div>
                                 </div>
                             </CardContent>
+                            {item.blog_link && (
+                                <CardFooter>
+                                    <a
+                                        href={item.blog_link}
+                                    >
+                                        <Button className="cursor-pointer" variant="outline">
+                                            <div class="flex flex-row items-center gap-2">
+                                                <span>Read Blog</span>
+                                                <ExternalLink />
+                                            </div>
+                                        </Button>
+                                    </a>
+                                </CardFooter>
+                            )}
                             {item.website_link && (
                                 <CardFooter>
                                     <a
@@ -61,7 +75,7 @@ import { ExternalLink } from "lucide-react";
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        <Button variant="outline">
+                                        <Button className="cursor-pointer" variant="outline">
                                             <div class="flex flex-row items-center gap-2">
                                                 <span>Visit Website</span>
                                                 <ExternalLink />

@@ -20,6 +20,7 @@ export const listProject: {
     description: string,
     skills: string[]
     website_link: string | null,
+    blog_link: string | null
 }[] = [
         {
             title: "Photographer Portfolio",
@@ -30,7 +31,8 @@ export const listProject: {
                 "Cloudflare",
                 "SEO"
             ],
-            website_link: "https://capturemoment.fitrie-server.xyz/"
+            website_link: "https://capturemoment.fitrie-server.xyz/",
+            blog_link: null,
         },
         {
             title: "Homelab Kubernetes",
@@ -42,8 +44,8 @@ export const listProject: {
                 "Kustomize",
                 "Kubeadm",
             ],
-            //FIX:
-            website_link: "http://localhost:4321/blog/kubernetes-homelab/"
+            website_link: null,
+            blog_link: "/blog/kubernetes-homelab/"
         },
         {
             title: "Money Tracker",
@@ -55,7 +57,8 @@ export const listProject: {
                 "Golang (Go)",
                 "PostgreSQL",
             ],
-            website_link: null
+            website_link: null,
+            blog_link: null,
         },
     ];
 
